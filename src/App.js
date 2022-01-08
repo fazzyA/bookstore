@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BookList from "./components/BookList";
 import Home from "./components/Home";
 import AddBook from "./components/AddBook";
+import ShowPosts from "./components/ShowPosts";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="App-header">
         <Link to={`/add`}>Add</Link>
         <Link to={`/list`}>List</Link>
+        <Link to={`/posts`}>Posts</Link>
       </div>
 
       <Routes>
@@ -18,6 +20,7 @@ function App() {
         </Route>
         <Route path="/add" element={<AddBook />} />
         <Route path="/list" element={<BookList />} />
+        <Route path="/posts" element={<ShowPosts />} />
       </Routes>
     </BrowserRouter>
   );
