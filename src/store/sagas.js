@@ -2,7 +2,7 @@ import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects'
 import * as api from './api.js'
 import * as actions from './actions'
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchUser(action) {
+function* getPosts(action) {
    try {
       const {data} = yield api.getPosts();
       console.log(data);
@@ -14,7 +14,7 @@ function* fetchUser(action) {
 
 
 export function* mySaga() {
-  yield takeLatest("GET_POST", fetchUser);
+  yield takeLatest("GET_POST", getPosts);
 }
   
   function* incrementAsync() {
